@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Showbiz Abuja</title>
+<meta name="description" content="Showbiz Abuja: free and featured events across Abuja, with Transcorp Hilton and Abuja Continental highlighted.">
+<meta name="theme-color" content="#7b3cff">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap">
+<style>
+/* Layout: confetti-gradient hero, three tabs (All / Free around Abuja / The two hotels), then a single column of colour-coded event cards. */
+:root{
+  --bg:#fbf8ff; --surface:#ffffff; --surface-2:#f2ecff; --fg:#1b1035; --muted:#6a5f86; --line:#e6ddfa;
+  --pink:#ff2e88; --violet:#7b3cff; --orange:#ff7a00; --yellow:#ffc400; --cyan:#00b4f0; --lime:#16c75c; --red:#ff3b3b;
+  --on-color:#ffffff; --shadow:0 6px 24px rgba(123,60,255,.12);
+  --hero:linear-gradient(120deg,#ff2e88 0%,#ff7a00 30%,#ffc400 50%,#16c75c 68%,#00b4f0 84%,#7b3cff 100%);
+  --th-grad:linear-gradient(135deg,#ff7a00,#ff2e88); --ac-grad:linear-gradient(135deg,#00b4f0,#7b3cff);
+  --th-tint:#fff1e8; --ac-tint:#ecf3ff;
+  --display:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e0a1f; --surface:#191233; --surface-2:#231a45; --fg:#f6f2ff; --muted:#b2a6d6; --line:#33285c;
+  --pink:#ff5aa5; --violet:#a07bff; --orange:#ff9a3d; --yellow:#ffd84d; --cyan:#3fd0ff; --lime:#45e486; --red:#ff6b6b;
+  --on-color:#14092b; --shadow:0 6px 28px rgba(0,0,0,.45);
+  --th-tint:#2b1630; --ac-tint:#15203f; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e0a1f; --surface:#191233; --surface-2:#231a45; --fg:#f6f2ff; --muted:#b2a6d6; --line:#33285c;
+  --pink:#ff5aa5; --violet:#a07bff; --orange:#ff9a3d; --yellow:#ffd84d; --cyan:#3fd0ff; --lime:#45e486; --red:#ff6b6b;
+  --on-color:#14092b; --shadow:0 6px 28px rgba(0,0,0,.45);
+  --th-tint:#2b1630; --ac-tint:#15203f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1000px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(255,255,255,.35) 0 60px,transparent 61px),radial-gradient(circle at 92% 75%,rgba(255,255,255,.22) 0 34px,transparent 35px),radial-gradient(circle at 70% 90%,rgba(255,255,255,.18) 0 18px,transparent 19px);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:26px 22px}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,60px);line-height:.95;letter-spacing:-.03em;margin:6px 0 0;text-shadow:0 2px 0 rgba(0,0,0,.12);text-wrap:balance}
+.hero .tag{margin:10px 0 0;max-width:58ch;font-weight:500;text-shadow:0 1px 1px rgba(0,0,0,.18)}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.18);padding:4px 10px;border-radius:999px}
+.theme{border:0;border-radius:999px;padding:8px 14px;font-weight:800;font-size:13px;cursor:pointer;background:#fff;color:#1b1035;box-shadow:0 2px 8px rgba(0,0,0,.15);white-space:nowrap}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.stat{background:rgba(255,255,255,.95);color:#1b1035;border-radius:12px;padding:8px 12px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.stat b{font-family:var(--display);font-size:20px;margin-right:4px}
+.stat:nth-child(1) b{color:#7b3cff}.stat:nth-child(2) b{color:#ff4d00}.stat:nth-child(3) b{color:#0076c7}.stat:nth-child(4) b{color:#0b9c45}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-block:16px 4px;scrollbar-width:none}
+.tab{flex:0 0 auto;border:2px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;font-weight:800;cursor:pointer;font-size:14px}
+.tab[aria-selected="true"]{border-color:transparent;color:#fff;background:var(--violet)}
+.tab[data-tab="free"][aria-selected="true"]{background:var(--lime);color:var(--on-color)}
+.tab[data-tab="hotels"][aria-selected="true"]{background:var(--th-grad)}
+.tab .n{font-family:var(--mono);font-size:12px;margin-left:6px;opacity:.85}
+.intro{margin:10px 0 0;color:var(--muted);max-width:70ch}
+.spot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media (max-width:640px){.spot{grid-template-columns:1fr}}
+.hotel{border:0;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0;cursor:pointer;text-align:left;color:#fff;box-shadow:var(--shadow)}
+.hotel.th{background:var(--th-grad)}.hotel.ac{background:var(--ac-grad)}
+.hotel[aria-pressed="true"]{outline:4px solid var(--yellow);outline-offset:2px}
+.hotel .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.9}
+.hotel .nm{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.1}
+.hotel .nx{font-size:14px;min-width:0}.hotel .nx strong{display:block}
+.hotel .cnt{font-family:var(--mono);font-size:12px;opacity:.9}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);margin-top:14px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:10px}
+.search{flex:1 1 220px;min-width:0;padding:10px 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface)}
+.chip{padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);cursor:pointer;font-size:13px;font-weight:700;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+#f-free[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:var(--on-color)}
+select.chip{appearance:auto}
+main{padding-block:10px 40px}
+.notice{background:var(--surface);border:2px dashed var(--line);border-radius:16px;padding:18px;color:var(--muted)}
+.group{margin-top:22px}
+.group h2{font-family:var(--display);font-weight:800;font-size:20px;margin:0 0 10px;display:flex;gap:10px;align-items:center}
+.group h2 .c{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--muted)}
+.live{width:10px;height:10px;border-radius:50%;background:var(--red);display:inline-block;box-shadow:0 0 0 4px color-mix(in srgb,var(--red) 25%,transparent)}
+@media (prefers-reduced-motion:no-preference){.live{animation:pulse 1.4s ease-in-out infinite}}
+@keyframes pulse{50%{opacity:.35}}
+.list{display:flex;flex-direction:column;gap:12px}
+.ev{--cat:var(--violet);display:grid;grid-template-columns:70px 1fr;gap:14px;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+.ev.th{background:var(--th-tint);border-color:color-mix(in srgb,var(--orange) 55%,transparent)}
+.ev.ac{background:var(--ac-tint);border-color:color-mix(in srgb,var(--cyan) 55%,transparent)}
+.date{text-align:center;border-radius:14px;background:var(--cat);color:var(--on-color);padding:8px 4px;align-self:start;font-variant-numeric:tabular-nums}
+.ev.th .date{background:var(--th-grad);color:#fff}.ev.ac .date{background:var(--ac-grad);color:#fff}
+.date .m{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.date .d{font-family:var(--display);font-size:28px;font-weight:800;line-height:1}
+.date .w{font-size:11px;font-weight:600;opacity:.9}
+.body{min-width:0;display:flex;flex-direction:column;gap:7px}
+.ev h3{margin:0;font-size:17px;line-height:1.3;font-weight:800;text-wrap:balance;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--muted);align-items:center}
+.meta .when{font-family:var(--mono);font-size:12px;color:var(--fg)}
+.pill{display:inline-flex;align-items:center;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--fg)}
+.pill.cat{background:var(--cat);color:var(--on-color)}
+.pill.free{background:var(--lime);color:var(--on-color)}
+.pill.th{background:var(--th-grad);color:#fff}.pill.ac{background:var(--ac-grad);color:#fff}
+.note{font-size:13px;color:var(--muted);margin:0;overflow-wrap:anywhere}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);font-weight:800;font-size:13px;text-decoration:none;cursor:pointer}
+.btn.primary{background:var(--violet);color:#fff;border-color:var(--violet)}
+.ev.th .btn.primary{background:var(--th-grad);border-color:transparent}
+.ev.ac .btn.primary{background:var(--ac-grad);border-color:transparent}
+.c-Business{--cat:var(--orange)}.c-Tech{--cat:var(--violet)}.c-Expo{--cat:var(--pink)}.c-Conference{--cat:var(--cyan)}
+.c-Health{--cat:var(--lime)}.c-Faith{--cat:var(--yellow)}.c-Community{--cat:var(--pink)}.c-Entertainment{--cat:var(--red)}
+.c-Training{--cat:var(--cyan)}.c-Fashion{--cat:var(--violet)}
+.panel{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:18px;margin-top:20px;box-shadow:var(--shadow)}
+.panel h2{font-family:var(--display);font-weight:800;font-size:22px;margin:0 0 6px}
+.sources{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px}
+.src{display:block;text-decoration:none;padding:12px 14px;border-radius:14px;color:#fff;min-width:0}
+.src strong{display:block;font-size:15px}
+.src span{font-size:12px;opacity:.92}
+.src.free-src::after{content:"FREE LISTINGS";display:inline-block;margin-top:6px;font-size:10px;font-weight:800;letter-spacing:.1em;background:rgba(255,255,255,.25);padding:2px 8px;border-radius:999px}
+.sources .src:nth-child(6n+1){background:#ff2e88}.sources .src:nth-child(6n+2){background:#7b3cff}.sources .src:nth-child(6n+3){background:#e86a00}
+.sources .src:nth-child(6n+4){background:#0a8fc4}.sources .src:nth-child(6n+5){background:#0d9c4a}.sources .src:nth-child(6n+6){background:#d4246b}
+footer{color:var(--muted);font-size:13px;padding-block:10px 40px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="toprow"><span class="kicker">Abuja · events tracker</span><button class="theme" id="themeBtn" type="button">🌙 Dark</button></div>
+    <h1>Showbiz Abuja</h1>
+    <p class="tag">Every event we can find in Abuja, free ones first. Transcorp Hilton and Abuja Continental (former Sheraton) are highlighted. Tap Register to sign up on the organiser's page.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button class="tab" role="tab" data-tab="all" aria-selected="true" type="button">All events<span class="n" id="n-all"></span></button>
+    <button class="tab" role="tab" data-tab="free" aria-selected="false" type="button">Free around Abuja<span class="n" id="n-free"></span></button>
+    <button class="tab" role="tab" data-tab="hotels" aria-selected="false" type="button">The two hotels<span class="n" id="n-hotels"></span></button>
+  </div>
+  <p class="intro" id="intro"></p>
+  <section class="spot" id="spot" aria-label="Hotel spotlight">
+    <button class="hotel th" id="spot-th" aria-pressed="false" type="button">
+      <span class="k">Spotlight</span><span class="nm">Transcorp Hilton</span>
+      <span class="nx" id="next-th">Loading…</span><span class="cnt" id="cnt-th"></span>
+    </button>
+    <button class="hotel ac" id="spot-ac" aria-pressed="false" type="button">
+      <span class="k">Spotlight</span><span class="nm">Abuja Continental</span>
+      <span class="nx" id="next-ac">Loading…</span><span class="cnt" id="cnt-ac"></span>
+    </button>
+  </section>
+</div>
+
+<div class="bar"><div class="wrap">
+  <input id="q" class="search" type="search" placeholder="Search events, venues, areas" aria-label="Search events">
+  <button class="chip" id="f-free" aria-pressed="false" type="button">Free only</button>
+  <select class="chip" id="f-cat" aria-label="Category"><option value="">All categories</option></select>
+  <button class="chip" id="f-past" aria-pressed="false" type="button">Show past</button>
+</div></div>
+
+<main class="wrap">
+  <div id="groups"><p class="notice">Loading events…</p></div>
+
+  <section class="panel">
+    <h2>Where to find more</h2>
+    <p class="note">The list is refreshed regularly from these sites. Ones tagged FREE LISTINGS have a free-events page.</p>
+    <div class="sources">
+      <a class="src free-src" href="https://shows.ng/events/abuja/free" target="_blank" rel="noopener"><strong>Shows.ng · Free</strong><span>Free events across Abuja</span></a>
+      <a class="src free-src" href="https://www.eventbrite.com/d/nigeria--abuja/free--events/" target="_blank" rel="noopener"><strong>Eventbrite · Free</strong><span>Biggest listing, free filter on</span></a>
+      <a class="src free-src" href="https://stayhappening.com/abuja" target="_blank" rel="noopener"><strong>StayHappening</strong><span>Marks free events clearly</span></a>
+      <a class="src" href="https://allevents.in/abuja" target="_blank" rel="noopener"><strong>AllEvents.in</strong><span>Collects from Facebook and others</span></a>
+      <a class="src" href="https://gdg.community.dev/" target="_blank" rel="noopener"><strong>Google Developer Groups</strong><span>DevFest and free tech meetups</span></a>
+      <a class="src" href="https://abuja.aitinkerers.org/" target="_blank" rel="noopener"><strong>AI Tinkerers Abuja</strong><span>AI builder meetups</span></a>
+      <a class="src" href="https://dev.events/AF/NG/Abuja" target="_blank" rel="noopener"><strong>dev.events</strong><span>Tech conferences</span></a>
+      <a class="src" href="https://10times.com/venues/transcorp-hilton-hotel" target="_blank" rel="noopener"><strong>10times</strong><span>Conferences at Transcorp Hilton</span></a>
+      <a class="src" href="https://www.showsbee.com/shows-0-1-Nigeria-Abuja-All_Shows.html" target="_blank" rel="noopener"><strong>Showsbee</strong><span>Trade shows and expos</span></a>
+      <a class="src" href="https://accrue.com/events/category/conferences/ng/abuja" target="_blank" rel="noopener"><strong>Accrue</strong><span>Summits and forums</span></a>
+      <a class="src" href="https://conferences.businessday.ng/events" target="_blank" rel="noopener"><strong>BusinessDay Events</strong><span>Business conferences</span></a>
+      <a class="src" href="https://www.eventbrite.com/d/nigeria--abuja/events/" target="_blank" rel="noopener"><strong>Eventbrite · All</strong><span>Every Abuja listing</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  On your phone: open this page in your browser, then choose “Add to Home screen” to keep Showbiz Abuja next to your other apps. Always confirm dates on the organiser's page before you go.
+</footer>
+
+<script>
+const CATS=["Business","Tech","Expo","Conference","Health","Faith","Community","Entertainment","Training","Fashion"];
+const VEN={transcorp:{name:"Transcorp Hilton",cls:"th"},continental:{name:"Abuja Continental",cls:"ac"}};
+const INTRO={
+  all:"Everything on the list, soonest first. Hotel events are tinted orange (Transcorp Hilton) and blue (Abuja Continental).",
+  free:"Free events everywhere in Abuja except the two hotels: tech meetups, expos, community and health events. Hotel freebies stay in their own tab.",
+  hotels:"Only Transcorp Hilton and Abuja Continental. Tap a spotlight card to see just one hotel."
+};
+const S={events:[],loaded:false,tab:"all",f:{q:"",hotel:"",free:false,cat:"",past:false}};
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toLocaleDateString("en-CA",{timeZone:"Africa/Lagos"});
+const addDays=(d,n)=>{const x=new Date(d+"T12:00:00Z");x.setUTCDate(x.getUTCDate()+n);return x.toISOString().slice(0,10)};
+const fmt=(d,o)=>new Date(d+"T12:00:00Z").toLocaleDateString("en-GB",Object.assign({timeZone:"UTC"},o));
+function el(tag,attrs,...kids){const e=document.createElement(tag);for(const k in attrs||{}){if(k==="class")e.className=attrs[k];else if(k==="text")e.textContent=attrs[k];else e.setAttribute(k,attrs[k])}for(const c of kids){if(c!=null)e.append(c)}return e}
+
+function applyTheme(t){if(t)document.documentElement.setAttribute("data-theme",t);updateThemeBtn()}
+function currentTheme(){const a=document.documentElement.getAttribute("data-theme");if(a)return a;return matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
+function updateThemeBtn(){$("themeBtn").textContent=currentTheme()==="dark"?"☀️ Light":"🌙 Dark"}
+try{const saved=localStorage.getItem("sa-theme");if(saved)applyTheme(saved)}catch(_){}
+updateThemeBtn();
+$("themeBtn").onclick=()=>{const n=currentTheme()==="dark"?"light":"dark";applyTheme(n);try{localStorage.setItem("sa-theme",n)}catch(_){}};
+
+for(const c of CATS)$("f-cat").append(el("option",{value:c,text:c}));
+
+function status(e,t){if(e.ongoing)return"now";const end=e.end||e.start;if(end<t)return"past";if(e.start<=t)return"now";return"soon"}
+function isFree(e){return e.isFree===true||/^\s*free/i.test(e.price||"")}
+function when(e){
+  if(e.ongoing)return"Ongoing";
+  let s=fmt(e.start,{day:"numeric",month:"short"});
+  const y=today().slice(0,4);
+  if(e.start.slice(0,4)!==y&&!(e.end&&e.end!==e.start))s+=" "+e.start.slice(0,4);
+  if(e.end&&e.end!==e.start)s+=" – "+fmt(e.end,{day:"numeric",month:"short",year:e.end.slice(0,4)!==y?"numeric":undefined});
+  if(e.time)s+=" · "+e.time;
+  return s;
+}
+const sortKey=e=>e.ongoing?"0":e.start;
+function inTab(e,tab){
+  if(tab==="free")return isFree(e)&&!VEN[e.venueKey];
+  if(tab==="hotels")return !!VEN[e.venueKey];
+  return true;
+}
+function filtered(){
+  const t=today(),f=S.f,q=f.q.trim().toLowerCase();
+  return S.events.filter(e=>{
+    if(!inTab(e,S.tab))return false;
+    if(!f.past&&status(e,t)==="past")return false;
+    if(S.tab==="hotels"&&f.hotel&&e.venueKey!==f.hotel)return false;
+    if(f.free&&!isFree(e))return false;
+    if(f.cat&&e.category!==f.cat)return false;
+    if(q&&!((e.title||"")+" "+(e.venue||"")+" "+(e.category||"")+" "+(e.notes||"")).toLowerCase().includes(q))return false;
+    return true;
+  }).sort((a,b)=>sortKey(a).localeCompare(sortKey(b))||(a.time||"").localeCompare(b.time||""));
+}
+function setTab(t){
+  if(!INTRO[t])t="all";
+  S.tab=t;if(t!=="hotels")S.f.hotel="";
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===t)));
+  $("intro").textContent=INTRO[t];
+  $("spot").hidden=t==="free";
+  $("f-free").hidden=t==="free";
+  try{history.replaceState(null,"","#"+t)}catch(_){}
+  render();
+}
+function render(){
+  const t=today();
+  const up=S.events.filter(e=>status(e,t)!=="past");
+  const n=k=>up.filter(e=>e.venueKey===k).length;
+  $("stats").replaceChildren(
+    el("span",{class:"stat"},el("b",{text:String(up.length)}),"upcoming"),
+    el("span",{class:"stat"},el("b",{text:String(n("transcorp"))}),"Transcorp Hilton"),
+    el("span",{class:"stat"},el("b",{text:String(n("continental"))}),"Abuja Continental"),
+    el("span",{class:"stat"},el("b",{text:String(up.filter(isFree).length)}),"free"));
+  $("n-all").textContent=up.length;$("n-free").textContent=up.filter(e=>inTab(e,"free")).length;$("n-hotels").textContent=n("transcorp")+n("continental");
+  for(const [k,c] of [["transcorp","th"],["continental","ac"]]){
+    const next=up.filter(e=>e.venueKey===k).sort((a,b)=>sortKey(a).localeCompare(sortKey(b)))[0];
+    $("next-"+c).replaceChildren(next?el("span",{},"Next up",el("strong",{text:next.title}),when(next)):el("span",{text:S.loaded?"Nothing listed yet.":"Loading…"}));
+    $("cnt-"+c).textContent=n(k)+" upcoming · tap to filter";
+    $("spot-"+c).setAttribute("aria-pressed",String(S.tab==="hotels"&&S.f.hotel===k));
+  }
+  const list=filtered(),box=$("groups");
+  if(!S.events.length){box.replaceChildren(el("p",{class:"notice",text:S.loaded?"No events found. Check back soon.":"Loading events…"}));return}
+  if(!list.length){box.replaceChildren(el("p",{class:"notice",text:"No events match these filters. Try clearing the search or turning off a filter."}));return}
+  const groups=new Map();
+  for(const e of list){
+    const st=status(e,t);let key,label;
+    if(st==="now"){key="0";label="Happening now"}
+    else if(st==="past"){key="zz";label="Past"}
+    else if(e.start<=addDays(t,7)){key="1";label="This week"}
+    else{key="2"+e.start.slice(0,7);label=fmt(e.start,{month:"long",year:"numeric"})}
+    if(!groups.has(key))groups.set(key,{label,items:[],live:st==="now"});
+    groups.get(key).items.push(e);
+  }
+  const frag=document.createDocumentFragment();
+  for(const [,g] of [...groups.entries()].sort((a,b)=>a[0].localeCompare(b[0]))){
+    const h=el("h2",{},g.live?el("span",{class:"live","aria-hidden":"true"}):null,g.label,el("span",{class:"c",text:String(g.items.length)}));
+    const l=el("div",{class:"list"});for(const e of g.items)l.append(card(e));
+    frag.append(el("section",{class:"group"},h,l));
+  }
+  box.replaceChildren(frag);
+}
+function card(e){
+  const v=VEN[e.venueKey];
+  const c=el("article",{class:"ev c-"+(CATS.includes(e.category)?e.category:"Business")+(v?" "+v.cls:"")});
+  const date=el("div",{class:"date"});
+  if(e.ongoing)date.append(el("div",{class:"m",text:"Now"}),el("div",{class:"d",text:"●"}),el("div",{class:"w",text:"ongoing"}));
+  else date.append(el("div",{class:"m",text:fmt(e.start,{month:"short"})}),el("div",{class:"d",text:fmt(e.start,{day:"numeric"})}),el("div",{class:"w",text:fmt(e.start,{weekday:"short"})}));
+  const meta=el("div",{class:"meta"});
+  if(v)meta.append(el("span",{class:"pill "+v.cls,text:v.name}));
+  meta.append(el("span",{class:"when",text:when(e)}));
+  if(e.venue&&(!v||e.venue.indexOf(v.name)<0))meta.append(el("span",{text:"📍 "+e.venue}));
+  const pills=el("div",{class:"meta"});
+  if(e.category)pills.append(el("span",{class:"pill cat",text:e.category}));
+  pills.append(el("span",{class:"pill"+(isFree(e)?" free":""),text:isFree(e)?"FREE":(e.price||"Price not listed")}));
+  if(e.source)pills.append(el("span",{text:"via "+e.source}));
+  const body=el("div",{class:"body"},el("h3",{text:e.title}),meta,pills);
+  if(e.notes)body.append(el("p",{class:"note",text:e.notes}));
+  if(e.url&&/^https?:\/\//.test(e.url))body.append(el("div",{class:"actions"},el("a",{class:"btn primary",href:e.url,target:"_blank",rel:"noopener noreferrer",text:"Register / details ↗"})));
+  c.append(date,body);return c;
+}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+$("q").addEventListener("input",e=>{S.f.q=e.target.value;render()});
+$("f-free").onclick=e=>{S.f.free=!S.f.free;e.target.setAttribute("aria-pressed",S.f.free);render()};
+$("f-past").onclick=e=>{S.f.past=!S.f.past;e.target.setAttribute("aria-pressed",S.f.past);render()};
+$("f-cat").onchange=e=>{S.f.cat=e.target.value;render()};
+function spot(k){const same=S.tab==="hotels"&&S.f.hotel===k;setTab("hotels");S.f.hotel=same?"":k;render()}
+$("spot-th").onclick=()=>spot("transcorp");
+$("spot-ac").onclick=()=>spot("continental");
+setTab((location.hash||"#all").slice(1));
+fetch("events.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{S.events=j.events||[];S.loaded=true;render()}).catch(()=>{S.loaded=true;render()});
+</script>
+</body>
+</html>
