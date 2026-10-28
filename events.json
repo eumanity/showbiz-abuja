@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "events": [
   {
    "category": "Tech",
@@ -15,6 +15,21 @@
    "id": "abuja-tech-week"
   },
   {
+   "category": "Entertainment",
+   "end": "2026-11-21",
+   "isFree": false,
+   "notes": "Masterclasses Nov 16–20, showcase concert Nov 20, main concert Nov 21; prices vary by source",
+   "price": "From ₦5,000",
+   "source": "Rio Times",
+   "start": "2026-11-16",
+   "time": "10:00",
+   "title": "Abuja International Afrojazz Festival 2026",
+   "url": "https://www.riotimesonline.com/abuja-afrojazz-festival-2026/",
+   "venue": "Venue TBA (possibly Jabi Lake), Abuja",
+   "venueKey": "other",
+   "id": "afrojazz-festival"
+  },
+  {
    "category": "Business",
    "isFree": false,
    "price": "Price not listed",
@@ -28,6 +43,21 @@
    "id": "agro-book-launch"
   },
   {
+   "category": "Expo",
+   "end": "2026-11-18",
+   "isFree": false,
+   "notes": "allevents.in lists Nov 10–11 instead; confirm date",
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-17",
+   "time": "08:00",
+   "title": "AHFIS Summit & Expo 2026 (Affordable Housing Finance & Investment)",
+   "url": "https://www.eventbrite.com/e/ahfis-summit-expo-2026-tickets-1997443103091",
+   "venue": "Shehu Musa Yar'Adua Centre, Central Area",
+   "venueKey": "other",
+   "id": "ahfis-expo"
+  },
+  {
    "category": "Tech",
    "isFree": false,
    "price": "Check site",
@@ -39,6 +69,32 @@
    "venue": "Abuja (venue on sign-up)",
    "venueKey": "other",
    "id": "ai-tinkerers"
+  },
+  {
+   "category": "Fashion",
+   "isFree": false,
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-11-07",
+   "time": "17:00",
+   "title": "Akwa-ocha Fashion Display",
+   "url": "https://allevents.in/abuja/akwa-ocha-fashion-display/200030897930800",
+   "venue": "Asokoro, Abuja",
+   "venueKey": "other",
+   "id": "akwa-ocha-fashion"
+  },
+  {
+   "category": "Tech",
+   "isFree": true,
+   "price": "Free",
+   "source": "shows.ng",
+   "start": "2026-10-31",
+   "time": "10:00",
+   "title": "AWS Women User Group Abuja Community Day 2026",
+   "url": "https://shows.ng/event/aws-women-user-group-abuja-community-day-2026-edition",
+   "venue": "New Horizon, Febson Mall, Wuse",
+   "venueKey": "other",
+   "id": "aws-women-community-day"
   },
   {
    "category": "Tech",
@@ -65,6 +121,19 @@
    "venue": "Awesome Plaza",
    "venueKey": "other",
    "id": "big-brother"
+  },
+  {
+   "category": "Entertainment",
+   "isFree": true,
+   "price": "Free",
+   "source": "shows.ng",
+   "start": "2026-11-08",
+   "time": "15:00",
+   "title": "Blessed Concert Abuja",
+   "url": "https://shows.ng/event/blessed-concert-abuja",
+   "venue": "The Recording Room, Lokogoma",
+   "venueKey": "other",
+   "id": "blessed-concert"
   },
   {
    "category": "Expo",
@@ -108,6 +177,19 @@
    "id": "devfest-abuja-2026"
   },
   {
+   "category": "Tech",
+   "isFree": false,
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-10",
+   "time": "11:00",
+   "title": "Accelerating Digital Transformation Through DevOps & Data Migration",
+   "url": "https://www.eventbrite.com/e/accelerating-digital-transformation-through-devops-data-migration-tickets-2003050360549",
+   "venue": "Bank of Industry Building, Abuja",
+   "venueKey": "other",
+   "id": "devops-data-migration"
+  },
+  {
    "category": "Entertainment",
    "isFree": false,
    "price": "Price not listed",
@@ -145,6 +227,19 @@
    "venue": "Iddo Sarki",
    "venueKey": "other",
    "id": "free-medical-outreach"
+  },
+  {
+   "category": "Business",
+   "isFree": false,
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-10",
+   "time": "10:00",
+   "title": "6th Frontier Discourse Annual Public Lecture Series and Awards",
+   "url": "https://www.eventbrite.com/e/6th-frontier-discourse-annual-public-lecture-series-and-awards-tickets-2003589781973",
+   "venue": "NNMA House (Merit House), Maitama",
+   "venueKey": "other",
+   "id": "frontier-discourse"
   },
   {
    "category": "Entertainment",
@@ -210,6 +305,19 @@
    "venue": "Abuja Continental Hotel",
    "venueKey": "continental",
    "id": "investors-summit"
+  },
+  {
+   "category": "Training",
+   "isFree": true,
+   "price": "Free",
+   "source": "Eventbrite",
+   "start": "2026-11-25",
+   "time": "09:00",
+   "title": "IT, Cybersecurity & Business Resilience Masterclass",
+   "url": "https://www.eventbrite.com/e/it-cybersecurity-business-resilience-masterclass-free-tickets-2003246077945",
+   "venue": "Bank of Industry, Off Herbert Macaulay Way, Zone A",
+   "venueKey": "other",
+   "id": "it-cyber-masterclass"
   },
   {
    "category": "Expo",
@@ -410,6 +518,34 @@
    "id": "private-sector"
   },
   {
+   "category": "Conference",
+   "end": "2026-11-12",
+   "isFree": false,
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-11-10",
+   "time": "10:00",
+   "title": "Public Managers Annual Conference – Abuja 2026",
+   "url": "https://allevents.in/abuja/public-managers-annual-conference-abuja-2026/200030897929054",
+   "venue": "Top Rank Hotel, Garki",
+   "venueKey": "other",
+   "id": "public-managers-conf"
+  },
+  {
+   "category": "Expo",
+   "isFree": false,
+   "notes": "Conference, exhibition and property showcase by Eventhive.ng",
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-12",
+   "time": "08:00",
+   "title": "Abuja Real Estate Fest 2026",
+   "url": "https://www.eventbrite.com/e/abuja-real-estate-fest-2026-tickets-2000425274847",
+   "venue": "Shehu Musa Yar'Adua Centre, Central Area",
+   "venueKey": "other",
+   "id": "real-estate-fest"
+  },
+  {
    "category": "Business",
    "isFree": true,
    "price": "Free",
@@ -421,6 +557,19 @@
    "venue": "Royal Choice Inn",
    "venueKey": "other",
    "id": "roundtable-1111"
+  },
+  {
+   "category": "Entertainment",
+   "isFree": false,
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-04",
+   "time": "10:00",
+   "title": "African SDGs Film Festival 2026",
+   "url": "https://www.eventbrite.co.uk/e/african-sdgs-film-festival-2026-tickets-1994313667866",
+   "venue": "Silverbird Cinemas, Central Area",
+   "venueKey": "other",
+   "id": "sdgs-film-festival"
   },
   {
    "category": "Conference",
@@ -447,6 +596,20 @@
    "venue": "Obasanjo Space Centre",
    "venueKey": "other",
    "id": "space-economy"
+  },
+  {
+   "category": "Community",
+   "isFree": false,
+   "notes": "RODI Foundation event honouring Nigeria's security personnel and families",
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-14",
+   "time": "16:00",
+   "title": "Timeless Tribute and Heroes Award",
+   "url": "https://www.eventbrite.com/e/timeless-tribute-and-heroes-award-tickets-2003081966082",
+   "venue": "Abuja Continental Hotel, 1 Ladi Kwali St, Zone 4",
+   "venueKey": "continental",
+   "id": "timeless-tribute"
   },
   {
    "category": "Faith",
@@ -487,6 +650,20 @@
    "venue": "EcofitnessHub Glass House, Kubwa",
    "venueKey": "other",
    "id": "wellness360"
+  },
+  {
+   "category": "Entertainment",
+   "isFree": false,
+   "notes": "Gates 4pm, Wizkid on stage ~10pm; standard from ₦50,000",
+   "price": "₦50,000",
+   "source": "Rio Times / Tix Africa",
+   "start": "2026-12-13",
+   "time": "16:00",
+   "title": "Wizkid Live in Abuja (Live Out Loud Music Festival)",
+   "url": "https://wizkid.tix.africa/",
+   "venue": "Eagle Square, CBD",
+   "venueKey": "other",
+   "id": "wizkid-abuja"
   },
   {
    "category": "Business",
