@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-11-02",
  "events": [
   {
    "category": "Tech",
@@ -202,6 +202,20 @@
    "id": "drift"
   },
   {
+   "category": "Expo",
+   "isFree": false,
+   "notes": "20+ universities from Canada, UK, USA, Australia, Germany; 9am–4pm",
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2027-02-18",
+   "time": "09:00",
+   "title": "Abuja International Education Fair February 2027",
+   "url": "https://allevents.in/abuja/abuja-international-education-fair-february-2027/200030897948351",
+   "venue": "Transcorp Hilton Abuja, Maitama",
+   "venueKey": "transcorp",
+   "id": "education-fair-feb-2027"
+  },
+  {
    "category": "Fashion",
    "end": "2026-11-06",
    "isFree": false,
@@ -214,6 +228,21 @@
    "venue": "Exhibition Pavilion, Area 11",
    "venueKey": "other",
    "id": "festmint"
+  },
+  {
+   "category": "Conference",
+   "end": "2026-11-12",
+   "isFree": false,
+   "notes": "By Open Africa Foundation with National Institute of Police Studies",
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-11-10",
+   "time": "09:30",
+   "title": "11th Annual Conference on Financial Crime, Governance and Electoral Integrity",
+   "url": "https://allevents.in/abuja/11th-annual-conference-on-financial-crime-governance-and-electoral-integrity/200030925550342",
+   "venue": "Merit House (NNMA House), Maitama",
+   "venueKey": "other",
+   "id": "financial-crime-conf"
   },
   {
    "category": "Health",
@@ -333,6 +362,21 @@
    "id": "kitchen-bath"
   },
   {
+   "category": "Expo",
+   "end": "2026-12-06",
+   "isFree": true,
+   "notes": "Free entry; 8am–7pm daily per description",
+   "price": "Free",
+   "source": "allevents.in",
+   "start": "2026-11-30",
+   "time": "08:00",
+   "title": "Kurudu Trade Fair 3.0",
+   "url": "https://allevents.in/abuja/kurudu-trade-fair/200030897978629",
+   "venue": "Gate 1 & 2, Army Estate, Kurudu",
+   "venueKey": "other",
+   "id": "kurudu-trade-fair"
+  },
+  {
    "category": "Faith",
    "end": "2026-10-30",
    "isFree": false,
@@ -439,6 +483,20 @@
    "id": "nac2026"
   },
   {
+   "category": "Community",
+   "isFree": false,
+   "notes": "Youth leadership forum with innovation pitches (prizes for top 3)",
+   "price": "Check site",
+   "source": "Eventbrite",
+   "start": "2026-11-03",
+   "time": "10:00",
+   "title": "National Youth Day 2026",
+   "url": "https://www.eventbrite.co.uk/e/national-youth-day-2026-tickets-2003567809252",
+   "venue": "Barcelona Hotels International, Wuse II",
+   "venueKey": "other",
+   "id": "national-youth-day-2026"
+  },
+  {
    "category": "Conference",
    "end": "2026-11-04",
    "isFree": false,
@@ -466,6 +524,21 @@
    "id": "nes32"
   },
   {
+   "category": "Business",
+   "end": "2026-11-22",
+   "isFree": false,
+   "notes": "Theme: Powering the Future",
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-11-15",
+   "time": "09:00",
+   "title": "NESI Week 2026 (Nigeria Electricity Supply Industry)",
+   "url": "https://allevents.in/abuja/nesi-nigeria-electricity-supply-industry-week-2026/200030897932505",
+   "venue": "Abuja (venue not specified)",
+   "venueKey": "other",
+   "id": "nesi-week-2026"
+  },
+  {
    "category": "Expo",
    "end": "2026-11-19",
    "isFree": false,
@@ -477,6 +550,20 @@
    "venue": "Abuja Trade & Convention Centre",
    "venueKey": "other",
    "id": "niaexpo"
+  },
+  {
+   "category": "Entertainment",
+   "isFree": false,
+   "notes": "Annual classical concert (live vocal & instrumental) organised by Pat the Singingbird",
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-12-22",
+   "time": "17:00",
+   "title": "Night of Classics",
+   "url": "https://allevents.in/abuja/night-of-classics/200030638089654",
+   "venue": "Transcorp Hilton Abuja, Maitama",
+   "venueKey": "transcorp",
+   "id": "night-of-classics"
   },
   {
    "category": "Conference",
@@ -503,6 +590,21 @@
    "venue": "Merit House, Maitama",
    "venueKey": "other",
    "id": "pie-ai"
+  },
+  {
+   "category": "Training",
+   "end": "2026-11-12",
+   "isFree": false,
+   "notes": "Hands-on training by Elevate With ICAD; register via Google form on page",
+   "price": "Price not listed",
+   "source": "allevents.in",
+   "start": "2026-11-10",
+   "time": "08:00",
+   "title": "Project Management Masterclass",
+   "url": "https://allevents.in/abuja/project-management-masterclass/200030925550947",
+   "venue": "ICAD Resource Center, Jabi",
+   "venueKey": "other",
+   "id": "pm-masterclass"
   },
   {
    "category": "Business",
@@ -637,6 +739,20 @@
    "venue": "Abuja Continental Hotel",
    "venueKey": "continental",
    "id": "unicef-genu"
+  },
+  {
+   "category": "Health",
+   "isFree": false,
+   "notes": "Women's wellness: mindful movement, refreshments, social connection",
+   "price": "Check site",
+   "source": "shows.ng",
+   "start": "2026-11-28",
+   "time": "11:00",
+   "title": "The Wellness Edit",
+   "url": "https://shows.ng/event/the-wellness-edit",
+   "venue": "Warehouse Lifestyle Company, AMAC Plaza, Zone 3",
+   "venueKey": "other",
+   "id": "wellness-edit"
   },
   {
    "category": "Health",
